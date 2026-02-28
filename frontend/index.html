@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fake News Detection System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+
+<header class="navbar">
+    <h1 class="logo">AI Fake News Detection</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#check">Check News</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <h2>AI Powered Fake News Detection</h2>
+    <p>Analyze headlines and articles using AI confidence scoring.</p>
+</section>
+
+<section id="check" class="glass-card">
+    <h2>Analyze News</h2>
+
+    <div class="scanner-line"></div>
+
+    <textarea id="newsInput" placeholder="Paste news headline or article here..."></textarea>
+
+    <div class="input-row">
+        <span id="charCount">0 characters</span>
+        <button id="analyzeBtn">Analyze</button>
+    </div>
+
+    <div class="loading">
+        <div id="progress"></div>
+    </div>
+</section>
+
+<section id="resultSection" class="glass-card hidden">
+    <h2>AI Prediction</h2>
+    <p id="resultText"></p>
+
+    <div class="meter">
+        <div id="confidenceBar"></div>
+    </div>
+
+    <p id="confidenceScore"></p>
+</section>
+
+<section id="dashboard" class="glass-card">
+    <h2>Analysis History</h2>
+
+    <div class="dashboard-controls">
+        <input type="text" id="searchHistory" placeholder="Search news...">
+        <select id="filterResult">
+            <option value="all">All</option>
+            <option value="Fake">Fake</option>
+            <option value="Real">Real</option>
+            <option value="Warning">Warning</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>News</th>
+                <th>Result</th>
+                <th>Confidence</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody id="historyTable"></tbody>
+    </table>
+</section>
+
+<section id="about" class="glass-card">
+    <h2>How the AI Works</h2>
+    <div class="steps">
+        <div class="step">1. Text preprocessing</div>
+        <div class="step">2. Model prediction</div>
+        <div class="step">3. Confidence scoring</div>
+    </div>
+</section>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

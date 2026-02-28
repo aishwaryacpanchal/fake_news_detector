@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #1a103a, #0a061a);
+    color: white;
+}
+
+.bg-grid {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+
+    /* Robot background */
+    background-image:
+        url("images/ai-robot.png"),
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+
+    background-size:
+        700px,
+        35px 35px,
+        35px 35px;
+
+    background-position:
+        right bottom,
+        center,
+        center;
+
+    background-repeat:
+        no-repeat,
+        repeat,
+        repeat;
+
+    opacity: 0.25;
+}
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    right: 5%;
+    bottom: 5%;
+    background: radial-gradient(circle, rgba(157,78,221,0.5), transparent);
+    filter: blur(120px);
+    z-index: -3;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.04);
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #b983ff;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Glass card */
+.glass-card {
+    width: 80%;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(155, 0, 255, 0.3);
+    position: relative;
+}
+
+/* Scanner animation */
+.scanner-line {
+    position: absolute;
+    top: 0;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, #c77dff, transparent);
+    animation: scan 3s infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+textarea {
+    width: 100%;
+    height: 130px;
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    background: rgba(0,0,0,0.3);
+    color: white;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg,#7b2cbf,#9d4edd);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #9d4edd;
+}
+
+/* Loading */
+.loading {
+    width: 100%;
+    height: 8px;
+    background: #222;
+    margin-top: 15px;
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg,#9d4edd,#c77dff);
+}
+
+/* Result meter */
+.meter {
+    width: 100%;
+    height: 15px;
+    background: #222;
+    border-radius: 10px;
+}
+
+#confidenceBar {
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+}
+
+/* Dashboard */
+.dashboard-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+/* Steps */
+.steps {
+    display: flex;
+    gap: 20px;
+}
+
+.step {
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+}
+
+/* Toast */
+#toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #9d4edd;
+    padding: 12px 20px;
+    border-radius: 10px;
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .glass-card {
+        width: 95%;
+    }
+}
